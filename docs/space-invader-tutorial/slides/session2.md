@@ -9,12 +9,13 @@ header: 'Space Invader × GitHub｜第二堂'
 第二堂講稿(共約 3 小時,含兩次 10 分鐘休息)
 時間配置:
   0:00–0:20  Part 1 複習 + 作業一檢討
-  0:20–1:05  Part 2 帶做階段三:防護罩 + 爆炸特效
+  0:20–1:00  Part 2 帶做階段三:防護罩 + 爆炸特效
   (休息 10 分)
-  1:15–2:10  Part 3 衝突處理(本堂重點)
+  1:10–1:55  Part 3 衝突處理(本堂重點)
+  1:55–2:25  Part 3.5 回到過去的版本(歷史重現)+ 比差異(深入)
   (休息 10 分)
-  2:20–2:45  Part 4 .gitignore + 分支清理 + 好習慣總整理
-  2:45–3:00  收尾 + 預告作業二
+  2:35–2:50  Part 4 .gitignore + 分支清理 + 好習慣總整理
+  2:50–3:00  收尾 + 預告作業二
 -->
 
 # Space Invader × GitHub
@@ -217,6 +218,95 @@ git push
 
 ---
 
+<!-- _class: lead -->
+# Part 3.5
+## 回到過去的版本(1:55–2:25)
+
+Git 最迷人的能力:**過去的版本都還在,看得到、回得去**
+
+---
+
+## 先複習:看歷史、找 hash
+
+```bash
+git log --oneline
+```
+
+```
+5c0796e docs: 兩堂制改版
+213591e feat: 加入 Space Invader 遊戲與教程   ← 想回到這個版本
+```
+
+前面那串 hash 就是版本的「身分證號」。
+
+---
+
+## A. 只想「看看」當時長怎樣
+
+```bash
+git checkout 213591e      # 時光機:整個專案變回當時
+python space_invader.py   # 跑跑看最初版(沒命、沒關卡)
+git checkout main         # 看完,回到現在
+```
+
+> Git 會說 "detached HEAD" —— 別怕,意思是「你正站在歷史某一點看風景」,`checkout main` 就回來了。
+
+---
+
+## B. 只還原「某一個檔案」到過去
+
+```bash
+git restore --source=213591e space_invader.py
+```
+
+只把這個檔變回當時,其他不動。要保留就照常 add + commit。
+
+---
+
+## C. 撤銷某次改動,但保留歷史
+
+```bash
+git revert 213591e
+```
+
+產生一個「反向 commit」抵銷那次改動。**不刪歷史**,團隊最推薦的反悔方式。
+
+---
+
+## ⚠️ 不要碰 `git reset --hard`
+
+網路上常看到它「回到過去」,但它會**真的把後面歷史丟掉**,還會跟遠端打架。
+
+> 新手一律用 A / B / C 三種安全做法就好。
+
+---
+
+## 比差異:兩個版本差在哪?
+
+```bash
+git diff 213591e 5c0796e      # 比較任意兩版本
+git diff main feature/xxx     # 比較兩條分支
+```
+
+GitHub 上:commit 頁面、PR 的 Files changed、Compare 頁面都能看。
+
+---
+
+## 速查表
+
+| 我想… | 用什麼 |
+|--------|--------|
+| 看歷史 | `git log --oneline` |
+| 看某次改動 | `git show <hash>` |
+| 比兩版本 | `git diff A B` |
+| 看當時(會回來) | `git checkout <hash>` → `checkout main` |
+| 還原單一檔 | `git restore --source=<hash> 檔名` |
+| 撤銷某次(留歷史) | `git revert <hash>` |
+
+詳見 `history-and-diff.md`
+
+---
+
 <!-- 休息 10 分鐘 -->
 ## ☕ 休息 10 分鐘
 
@@ -224,7 +314,7 @@ git push
 
 <!-- _class: lead -->
 # Part 4
-## .gitignore + 收尾好習慣(2:20–2:45)
+## .gitignore + 收尾好習慣(2:35–2:50)
 
 ---
 

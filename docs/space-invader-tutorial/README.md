@@ -39,6 +39,7 @@
 |------|------|
 | Git 背景 + 工作流程 | [git-background.md](git-background.md) / [workflow.md](workflow.md) |
 | 階段一:玩家三條命 | [stage1-lives.md](stage1-lives.md) |
+| 看歷史與差異入門 | [history-and-diff.md](history-and-diff.md) |
 | 階段二:關卡系統 | [stage2-levels.md](stage2-levels.md) |
 
 ➡️ 回家 2 小時:[作業一](homework/homework1.md)
@@ -50,6 +51,7 @@
 |------|------|
 | 階段三:防護罩 + 爆炸特效 | [stage3-bunkers.md](stage3-bunkers.md) |
 | **衝突處理**(本堂重點) | [stage3-bunkers.md](stage3-bunkers.md) Part C |
+| **回到過去的版本**(歷史重現)+ 比差異 | [history-and-diff.md](history-and-diff.md) |
 | `.gitignore` + 分支清理 | [stage3-bunkers.md](stage3-bunkers.md) Part D |
 
 ➡️ 回家 2 小時:[作業二](homework/homework2.md)

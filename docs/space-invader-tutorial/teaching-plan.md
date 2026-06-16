@@ -27,19 +27,22 @@
 
 | 堂次 | 講解(3h) | 回家自練(2h) |
 |------|-----------|----------------|
-| **第一堂** | Git 背景 + 工作流程 + 帶做階段一(三條命)、階段二(關卡) | [作業一](homework/homework1.md):獨立做一個小功能,跑完整 PR 流程 |
-| **第二堂** | 階段三(防護罩+爆炸)+ **衝突處理** + `.gitignore` + 分支清理 | [作業二](homework/homework2.md):做一個功能 + 親手製造並解決衝突 |
+| **第一堂** | Git 背景 + 工作流程 + 階段一(三條命)、階段二(關卡)+ 看歷史與差異入門 | [作業一](homework/homework1.md):獨立做小功能跑完整 PR + 讀自己的歷史/差異 |
+| **第二堂** | 階段三(防護罩+爆炸)+ **衝突處理** + **回到過去的版本**(歷史重現)+ `.gitignore` + 分支清理 | [作業二](homework/homework2.md):做功能 + 解決衝突 + 歷史重現 |
+
+> 「看歷史、比差異、回到過去的版本」這條主題拆兩堂教:第一堂教**看**(log/diff/show),第二堂教**回**(checkout/restore/revert),教材集中在 [history-and-diff.md](history-and-diff.md)。
 
 ## 第一堂 3 小時節奏
 
 | 時間 | 內容 | 對應教材 |
 |------|------|----------|
-| 0:00–0:40 | Git 背景(repo/commit/branch/本機 vs 遠端/PR) | [git-background.md](git-background.md) |
-| 0:40–1:00 | 工作流程總覽 | [workflow.md](workflow.md) |
-| 1:00–1:10 | ☕ 休息 | |
-| 1:10–1:55 | 帶做階段一:三條命(完整跑一次 PR) | [stage1-lives.md](stage1-lives.md) |
-| 1:55–2:05 | ☕ 休息 | |
-| 2:05–2:50 | 帶做階段二:關卡系統(再跑一次 + Issue) | [stage2-levels.md](stage2-levels.md) |
+| 0:00–0:35 | Git 背景(repo/commit/branch/本機 vs 遠端/PR) | [git-background.md](git-background.md) |
+| 0:35–0:55 | 工作流程總覽 | [workflow.md](workflow.md) |
+| 0:55–1:05 | ☕ 休息 | |
+| 1:05–1:45 | 帶做階段一:三條命(完整跑一次 PR) | [stage1-lives.md](stage1-lives.md) |
+| 1:45–2:00 | 看歷史與差異入門(log / diff / show) | [history-and-diff.md](history-and-diff.md) |
+| 2:00–2:10 | ☕ 休息 | |
+| 2:10–2:50 | 帶做階段二:關卡系統(再跑一次 + Issue) | [stage2-levels.md](stage2-levels.md) |
 | 2:50–3:00 | 收尾 + 預告作業一 | [homework1.md](homework/homework1.md) |
 
 投影片:[slides/session1.md](slides/session1.md)
@@ -49,12 +52,13 @@
 | 時間 | 內容 | 對應教材 |
 |------|------|----------|
 | 0:00–0:20 | 複習 + 作業一檢討 | |
-| 0:20–1:05 | 帶做階段三:防護罩 + 爆炸特效 | [stage3-bunkers.md](stage3-bunkers.md) |
-| 1:05–1:15 | ☕ 休息 | |
-| 1:15–2:10 | **衝突處理**(故意製造 + 解決) | [stage3-bunkers.md](stage3-bunkers.md) Part C |
-| 2:10–2:20 | ☕ 休息 | |
-| 2:20–2:45 | `.gitignore` + 分支清理 + 好習慣總整理 | |
-| 2:45–3:00 | 收尾 + 預告作業二 | [homework2.md](homework/homework2.md) |
+| 0:20–1:00 | 帶做階段三:防護罩 + 爆炸特效 | [stage3-bunkers.md](stage3-bunkers.md) |
+| 1:00–1:10 | ☕ 休息 | |
+| 1:10–1:55 | **衝突處理**(故意製造 + 解決) | [stage3-bunkers.md](stage3-bunkers.md) Part C |
+| 1:55–2:25 | **回到過去的版本**(歷史重現)+ 比差異(深入) | [history-and-diff.md](history-and-diff.md) |
+| 2:25–2:35 | ☕ 休息 | |
+| 2:35–2:50 | `.gitignore` + 分支清理 + 好習慣總整理 | |
+| 2:50–3:00 | 收尾 + 預告作業二 | [homework2.md](homework/homework2.md) |
 
 投影片:[slides/session2.md](slides/session2.md)
 
