@@ -8,12 +8,13 @@ header: 'Space Invader × GitHub｜第一堂'
 <!--
 第一堂講稿(共約 3 小時,含兩次 10 分鐘休息)
 時間配置:
-  0:00–0:40  Part 1 Git 背景
-  0:40–1:00  Part 2 工作流程總覽
+  0:00–0:35  Part 1 Git 背景
+  0:35–0:55  Part 2 工作流程總覽
   (休息 10 分)
-  1:10–1:55  Part 3 帶做階段一:三條命(完整跑一次 PR)
+  1:05–1:45  Part 3 帶做階段一:三條命(完整跑一次 PR)
+  1:45–2:00  Part 3.5 看歷史與差異入門(log / diff / show)
   (休息 10 分)
-  2:05–2:50  Part 4 帶做階段二:關卡系統(再跑一次 + Issue)
+  2:10–2:50  Part 4 帶做階段二:關卡系統(再跑一次 + Issue)
   2:50–3:00  收尾 + 預告作業一
 -->
 
@@ -239,6 +240,53 @@ git branch -d feature/player-lives
 
 ---
 
+<!-- _class: lead -->
+# Part 3.5
+## 看歷史與差異入門(1:45–2:00)
+
+你剛做了好幾個 commit —— 現在來「讀」它們
+
+---
+
+## 看歷史:改過什麼?
+
+```bash
+git log --oneline        # 一行一個 commit
+git log --oneline --graph
+```
+
+```
+a1b2c3d feat: 玩家三條命並顯示在右上角
+213591e feat: 加入 Space Invader 遊戲與教程
+```
+
+> 最前面那串是 commit 的「身分證號」(hash),指定版本就用它。
+
+---
+
+## 看某個 commit 改了什麼
+
+```bash
+git show a1b2c3d        # 那次 commit 的說明 + 完整改動
+```
+
+綠色 `+` = 新增的行,紅色 `-` = 刪掉的行。
+
+---
+
+## 比較兩個版本的差異
+
+```bash
+git diff                      # 我還沒 commit 的改動
+git diff 213591e a1b2c3d      # 任意兩個版本之間
+```
+
+在 GitHub 上不用打指令:**PR 的 Files changed 分頁**就是在看差異。
+
+> 完整版(含「回到過去的版本」)見 `history-and-diff.md`,第二堂會深入。
+
+---
+
 <!-- 休息 10 分鐘 -->
 ## ☕ 休息 10 分鐘
 
@@ -246,7 +294,7 @@ git branch -d feature/player-lives
 
 <!-- _class: lead -->
 # Part 4
-## 帶做階段二:關卡系統(2:05–2:50)
+## 帶做階段二:關卡系統(2:10–2:50)
 
 再跑一次 + 學用 Issue
 

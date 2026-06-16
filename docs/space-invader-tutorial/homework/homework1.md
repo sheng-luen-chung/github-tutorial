@@ -32,6 +32,18 @@ git pull                              # ⑨ 再拉回合併結果
 git branch -d feature/你的功能名        # ⑩ 刪分支
 ```
 
+## 做完後:讀讀自己的歷史(約 15 分鐘)
+
+功能做完、PR merge 後,用這幾個指令「回頭看」自己改了什麼:
+
+```bash
+git log --oneline           # 看歷史,找出你那筆 commit 的 hash
+git show <你的commit hash>   # 看那次 commit 到底改了哪些行
+git diff <舊hash> <新hash>   # 比較「加功能前」和「加功能後」
+```
+
+> 這是在練 `history-and-diff.md` 的前半段(看歷史、比差異),第二堂會教「回到過去的版本」。
+
 ## 繳交方式
 
 把你的 **PR 連結**貼給老師。我會看:
