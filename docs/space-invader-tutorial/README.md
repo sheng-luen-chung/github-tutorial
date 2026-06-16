@@ -1,17 +1,22 @@
-# Space Invader × Git/GitHub 三小時教程
+# Space Invader × Git/GitHub 教程(兩堂家教制)
 
 給**剛要上大一的你**:用做遊戲的方式,把 GitHub 的協作流程練到熟。
-重點不是遊戲多厲害,而是你會反覆操作同一套流程三次 —— 第三次你就不用看講義了。
+重點不是遊戲多厲害,而是你會反覆操作同一套流程很多次 —— 練到不用看講義為止。
 
-## 你會學到的核心循環
+課程分**兩堂**,每堂是 **3 小時講解 + 2 小時回家自練**。
 
-每做一個遊戲功能,就完整跑一次這個循環:
+## 第一次上課前,先讀這兩份
+
+1. [git-background.md](git-background.md) —— Git 是什麼、跟 GitHub 差在哪(完全新手必看)
+2. [workflow.md](workflow.md) —— **標準工作流程**,整套教程的主軸
+
+## 你會反覆練習的核心循環
 
 ```
-開 Issue → 開 branch → 改程式 → commit → push → 開 PR → merge → 切回 main → pull
+先拉、開枝、改存推、開 PR 合、再拉、剪枝
+= checkout main → pull → checkout -b → 改 → add → commit → push
+  → 開 PR → Merge → checkout main → pull → branch -d
 ```
-
-> 👩‍🏫 教學者請參考 [teaching-plan.md](teaching-plan.md):設計理念、帶課節奏與給新手的提醒。
 
 ## 名詞白話翻譯
 
@@ -25,26 +30,42 @@
 | `merge`(合併) | 真的把分支併進去 |
 | conflict(衝突) | 兩個人改了同一行,Git 不知道聽誰的,要你決定 |
 
-## 時間軸(總共三小時)
+## 課程地圖
 
-| 時間 | 階段 | 遊戲功能 | Git 重點 |
-|------|------|----------|----------|
-| 0:00–0:30 | 暖身 | 跑起遊戲、讀懂程式 | clone / status / log,認識 main |
-| 0:30–1:15 | [階段一](stage1-lives.md) | 玩家三條命 | 完整跑第一次循環 + 第一個 PR |
-| 1:15–2:00 | [階段二](stage2-levels.md) | 關卡系統 | 用 Issue 追蹤 + 好的 commit |
-| 2:00–2:50 | [階段三](stage3-bunkers.md) | 防護罩 + 爆炸特效 | **解決 merge 衝突** + `.gitignore` |
-| 2:50–3:00 | 收尾 | 玩成果 | 回顧 commit 歷史與貢獻圖 |
+### 📘 第一堂:Git 基礎 + 你的第一個 PR(3h 講解)
+投影片:[slides/session1.md](slides/session1.md)
 
-## 環境準備(課前)
+| 內容 | 教材 |
+|------|------|
+| Git 背景 + 工作流程 | [git-background.md](git-background.md) / [workflow.md](workflow.md) |
+| 階段一:玩家三條命 | [stage1-lives.md](stage1-lives.md) |
+| 階段二:關卡系統 | [stage2-levels.md](stage2-levels.md) |
+
+➡️ 回家 2 小時:[作業一](homework/homework1.md)
+
+### 📗 第二堂:進階功能 + 解決衝突(3h 講解)
+投影片:[slides/session2.md](slides/session2.md)
+
+| 內容 | 教材 |
+|------|------|
+| 階段三:防護罩 + 爆炸特效 | [stage3-bunkers.md](stage3-bunkers.md) |
+| **衝突處理**(本堂重點) | [stage3-bunkers.md](stage3-bunkers.md) Part C |
+| `.gitignore` + 分支清理 | [stage3-bunkers.md](stage3-bunkers.md) Part D |
+
+➡️ 回家 2 小時:[作業二](homework/homework2.md)
+
+> 👩‍🏫 教學者請看 [teaching-plan.md](teaching-plan.md):設計理念、逐段帶課節奏與給新手的提醒。
+
+## 環境準備(第一堂課前)
 
 ```bash
-# 1. 安裝 Python(3.8 以上)與 Git,略
+# 1. 安裝 Python(3.8 以上)與 Git
 # 2. 安裝遊戲套件
 python -m pip install pygame
 
 # 3. 把這個 repo 抓下來
 git clone <你的 repo 網址>
-cd vibe-coding
+cd github-tutorial
 
 # 4. 確認遊戲跑得起來(按關閉視窗即可結束)
 python space_invader.py
