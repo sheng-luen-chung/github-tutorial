@@ -1,0 +1,11 @@
+# Python
+__pycache__/
+*.pyc
+
+# 編輯器 / 系統
+.vscode/
+.DS_Store
+Thumbs.db
+
+# 遊戲存檔(階段二選做:最高分紀錄)
+highscore.txt
