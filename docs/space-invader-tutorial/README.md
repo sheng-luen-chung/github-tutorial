@@ -11,6 +11,8 @@
 開 Issue → 開 branch → 改程式 → commit → push → 開 PR → merge → 切回 main → pull
 ```
 
+> 👩‍🏫 教學者請參考 [teaching-plan.md](teaching-plan.md):設計理念、帶課節奏與給新手的提醒。
+
 ## 名詞白話翻譯
 
 | 指令 / 名詞 | 白話 |
